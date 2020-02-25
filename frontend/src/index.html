@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="cite"></div>
+        <button class="reload">Load</button>
+      </div>
+    </div>
+    <script>
+      const API_URL = 'http://localhost:8000/api';
+
+      const fetchData = () => {
+        fetch(API_URL)
+          .then(req => req.json())
+          .then(data => {
+            $cite.textContent = JSON.stringify(data);
+          })
+      };
+
+      const $cite = document.querySelector('.cite');
+      const $button = document.querySelector('.reload');
+
+      $button.addEventListener('click', fetchData);
+      window.addEventListener('load', fetchData);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,6 @@
+.venv
+__cache__
+
+
+*.pyc
+*.pyw
