@@ -1,3 +1,4 @@
+import asyncio
 import requests
 
 import os.path
@@ -38,7 +39,7 @@ class Application(tornado.web.Application):
 
 class APIHandler(tornado.web.RequestHandler):
 
-    def get(self):
+    async def get(self):
         quote = requests.get(GET_QUOTE_URL)
         self.write(quote.json())
 

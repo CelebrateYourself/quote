@@ -13,6 +13,10 @@ const fetchData = () => {
       $author.textContent = quoteAuthor || 'неизвестен';
       $quote.textContent = quoteText;
     })
+    .catch(e => {
+      $author.textContent = 'Ошибка';
+      $quote.textContent = e.message;
+    })
 }
 
 $button.addEventListener('click', fetchData);
