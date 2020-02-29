@@ -1,3 +1,5 @@
+import requests
+
 import os.path
 import tornado.ioloop
 import tornado.options
@@ -5,6 +7,11 @@ import tornado.web
 
 from tornado.options import define, options
 
+
+GET_QUOTE_URL = (
+    'http://api.forismatic.com/api/1.0/'
+    '?method=getQuote&format=json&lang=ru'
+)
 
 define('port', default=8000, help='run on the given port', type=int)
 
@@ -32,8 +39,8 @@ class Application(tornado.web.Application):
 class APIHandler(tornado.web.RequestHandler):
 
     def get(self):
-        responce = {'greet': 'hello'}
-        self.write(responce)
+        quote = requests.get(GET_QUOTE_URL)
+        self.write(quote.json())
 
 
 class NotFoundHandler(tornado.web.RequestHandler):
