@@ -1,5 +1,8 @@
+build
+dist
 .venv
-__cache__
+__pycache__
+*.spec
 
 
 *.pyc
