@@ -1,6 +1,6 @@
 {
-  "name": "electorn",
-  "productName": "electorn",
+  "name": "quote",
+  "productName": "quote",
   "version": "1.0.0",
   "description": "Electron and Tronado application",
   "main": "src/index.js",

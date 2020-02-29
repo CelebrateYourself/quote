@@ -1,2 +1,2 @@
 #!/bin/bash
-./dist/**/electorn
+./dist/**/quote
