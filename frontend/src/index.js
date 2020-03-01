@@ -4,7 +4,7 @@ const { join } = require('path');
 const { execFile } = require('child_process');
 
 const SERVER_PID = process.env.SERVER;
-const PORT = process.env.PORT || 9999;
+const PORT = process.env.PORT || 9009;
 process.env.PORT = PORT;
 
 let SERVER = null;

@@ -10,5 +10,5 @@ python -m  PyInstaller -F ./backend/server.py --workpath=./backend/build --distp
 npm install --prefix ./frontend/
 
 cp ./backend/dist/server ./frontend/src/
-npm --prefix ./frontend/ run package
+npm --prefix ./frontend/ run make
 mv ./frontend/out/ ./dist/
