@@ -39,7 +39,7 @@ class Application(tornado.web.Application):
 
 class APIHandler(tornado.web.RequestHandler):
 
-    async def get(self):
+    def get(self):
         quote = requests.get(GET_QUOTE_URL)
         self.write(quote.json())
 
